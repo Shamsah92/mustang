@@ -6,9 +6,13 @@ import MustangItem from "./MustangItem";
 
 import { ListWrap } from "../styles";
 
-const MustangList = () => {
+const MustangList = (props) => {
   const mustangLists = data.map((mustang) => (
-    <MustangItem mustang={mustang} key={mustang.id} />
+    <MustangItem
+      mustang={mustang}
+      handleVisible={props.handleVisible}
+      key={mustang.id}
+    />
   ));
 
   return <ListWrap>{mustangLists}</ListWrap>;
