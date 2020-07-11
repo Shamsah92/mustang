@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-
+import { Route, Switch } from "react-router";
 import MustangList from "./components/MustangList";
-import { Head, GlobalStyle, Description } from "./styles";
+import { GlobalStyle } from "./styles";
 import { ThemeProvider } from "styled-components";
 import MustangDetail from "./components/MustangDetail";
 import mustanglines from "./data";
+import Home from "./components/Home";
+import { Link } from "react-router-dom";
 
 const theme = {
   mainColor: "white",
@@ -20,33 +22,30 @@ function App() {
     );
     umMustang(handleVisible);
   };
-  const handlemustang = () =>
-    alert(
-      "Welcome, dear visitor, we hope that you get useful information in our site "
-    );
 
-  const setView = () =>
+
+  const setView = (props) =>
     mustang ? (
-      <MustangDetail mustang={mustang} />
+      <MustangDetail mustang={mustang} umMustang={umMustang} />
     ) : (
-      <MustangList handleVisible={handleVisible} />
-    );
+        <MustangList handleVisible={handleVisible} />
+      );
 
   return (
     <ThemeProvider theme={theme}>
+
       <GlobalStyle />
-      <div>
-        <Head>
-          <img
-            src="https://www7.0zz0.com/2020/07/10/15/270298198.jpg"
-            alt="Logo"
-          />
-          <p></p>
-          <button onClick={handlemustang}>Welcome Massage </button>
-        </Head>
-        <Description>Mustang List</Description>
-      </div>
-      {setView()}
+
+      <Switch>
+        <Route path="/mustang">
+          {setView}
+
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+
+      </Switch>
     </ThemeProvider>
   );
 }

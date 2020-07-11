@@ -30,6 +30,16 @@ const MustangWrap = styled.div`
     color: ${(props) => props.theme.description};
   }
 `;
+
+const SearchBarstyled = styled.input`
+
+padding: 0.5rem;
+margin: 1rem auto ;
+display: block;
+width:50%;
+color: red;
+
+`;
 const DetailWrapper = styled.div`
   display: block;
   margin-left: auto;
@@ -56,4 +66,4 @@ body{
 background-color: ${(props) => props.theme.backgroundColor};
 }
 `;
-export { Head, ListWrap, MustangWrap, GlobalStyle, Description, DetailWrapper };
+export { Head, ListWrap, MustangWrap, GlobalStyle, Description, DetailWrapper, SearchBarstyled };

@@ -9,6 +9,8 @@ const MustangDetail = (props) => {
       <p>{mustang.name}</p>
       <p>{mustang.released}</p>
       <p>{mustang.topspeed}</p>
+      <p onClick={() => props.umMustang()}>Back To List</p>
+
     </DetailWrapper>
   );
 };
