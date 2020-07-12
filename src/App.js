@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components";
 import MustangDetail from "./components/MustangDetail";
 import mustanglines from "./data";
 import Home from "./components/Home";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const theme = {
   mainColor: "white",
@@ -23,28 +23,22 @@ function App() {
     umMustang(handleVisible);
   };
 
-
-  const setView = (props) =>
+  const setView = () =>
     mustang ? (
       <MustangDetail mustang={mustang} umMustang={umMustang} />
     ) : (
-        <MustangList handleVisible={handleVisible} />
-      );
+      <MustangList handleVisible={handleVisible} />
+    );
 
   return (
     <ThemeProvider theme={theme}>
-
       <GlobalStyle />
 
       <Switch>
-        <Route path="/mustang">
-          {setView}
-
-        </Route>
+        <Route path="/mustang">{setView}</Route>
         <Route path="/">
           <Home />
         </Route>
-
       </Switch>
     </ThemeProvider>
   );

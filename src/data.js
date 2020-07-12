@@ -1,4 +1,4 @@
-const mustanglines = [
+const mustangs = [
   {
     id: 1,
     name: "Shelby G.T.350",
@@ -33,8 +33,7 @@ const mustanglines = [
     name: "Mustang Bullitt",
     released: "Released 2008",
     topspeed: " Top speed 151 MPH",
-    image:
-      "https://www2.0zz0.com/2020/07/11/09/432691920.jpg",
+    image: "https://www2.0zz0.com/2020/07/11/09/432691920.jpg",
   },
   {
     id: 6,
@@ -53,4 +52,4 @@ const mustanglines = [
       "https://s3.amazonaws.com/wheelsca/wp-content/uploads/2016/07/18081700/shelby-gt350.jpg",
   },
 ];
-export default mustanglines;
+export default mustangs;
